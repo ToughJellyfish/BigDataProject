@@ -31,6 +31,7 @@ dataset = dataset.fillna(0)
 print(dataset.head())
 #print(dataset.Metal)
 
+# data process
 df = pd.DataFrame({"Metal":list(dataset.Metal)})
 dataset["Metal"] = df["Metal"].astype('category')
 df_metalLevel = pd.get_dummies(dataset["Metal"])
@@ -70,6 +71,7 @@ x_train, x_test, y_train, y_test = train_test_split(
 input_layer = layers.Input(9)
 output_layer = layers.Sigmoid(1)
 
+#sci-learn model create
 cgnet = algorithms.ConjugateGradient(
     connection=[
         input_layer,
@@ -87,7 +89,7 @@ cgnet.train(x_train, y_train, epochs=10)
 y_predict = cgnet.predict(x_test).round(1)
 plots.error_plot(cgnet)
 
-
+#calculate erro and accuracy
 real = target_scaler.inverse_transform(y_test)
 y_predicted = target_scaler.inverse_transform(y_predict)
 
