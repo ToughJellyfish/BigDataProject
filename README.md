@@ -9,3 +9,4 @@ R: contains datacleasing.R, and annForMedical.R. Run on Rstudio with R-3.3.3. da
 -------------------------------------
 Python: includes 4 parts of data analysis and virtualization-data retrieve, data clean, data process and data virtualization.
 Run on Anaconda with sklearn, neupy, numpy and pandas machine learning and artificial neural network libraries. implmenting a conjugategradient algorithm model contains 3 layers- input layer with 9 parameters(weights), hidden layer with 30 neutrons to handle input data, output layer to output rate price. The model divide train data and test data eight to two, using optimizer sigmoid and linearsearch algorithm to optimize the weights for predictions. 
+-------------------------------------
