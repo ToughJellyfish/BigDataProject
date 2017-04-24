@@ -1,0 +1,40 @@
+ google.charts.load("current", {packages:['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Element", "Density", { role: "style" } ],
+        ['Family Option',29.53,"#FFB6C1"],
+        ["0-20",138.5,"#FFC0CB"],
+				["21-30",235.66,"FF69B4"],
+        ["31-40",277.13,"DB7093"],
+        ["41-50",333.42,"	#C71585"],
+        ["51-65",532.33,"	#8B008B"],
+        ["65 and over",675.84,"	#DC143C"]
+
+
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Median Monthly rate of diffrent age range",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+        vAxis: {
+          title: 'Rate'
+        },
+        hAxis:{
+        title:'Age'
+        },
+      };
+      var chart = new google.visualization.ColumnChart(document.getElementById("regions_div"));
+      chart.draw(view, options);
+  }

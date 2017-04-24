@@ -1,0 +1,48 @@
+      google.charts.load('current', {'packages':['geochart']});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+
+       
+          var data = google.visualization.arrayToDataTable([
+    ['State', 'Rate'],
+['AZ',355.64],
+['DE',495.52],
+['FL',464.36],
+['GA',425.77],
+['HI',398.75],
+['IA',411.1],
+['IL',409.39],
+['IN',430.92],
+['KS',382.2],
+['LA',516.64],
+['ME',480.03],
+['MI',382.47],
+['MO',429.76],
+['MS',378.64],
+['MT',463.42],
+['NC',545.77],
+['ND',419.12],
+['NE',455.19],
+['NH',413.81],
+['NM',363.7],
+['NV',476.17],
+['OH',458.13],
+['OK',423.75],
+['OR',378.0],
+['PA',410.75],
+['SC',505.49],
+['SD',426.61],
+['TN',483.25],
+['TX',427.01],
+['UT',383.28],
+['VA',393.72],
+['WI',481.28],
+['WV',517.37],
+['WY',655.14]
+  ]);
+
+  var geochart = new google.visualization.GeoChart(
+      document.getElementById('regions_div'));
+  geochart.draw(data, {region: "US", resolution: "provinces"});
+      }
